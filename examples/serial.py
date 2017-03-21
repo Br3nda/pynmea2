@@ -9,8 +9,7 @@ def read(filename):
 
     while 1:
         for msg in reader.next():
-          print(msg)
-
+          print("Longitude: {} {}. Latitude: {} {}".format(msg.lon, msg.lon_dir, msg.lat, msg.lat_dir))
 
 def read_serial(filename):
     com = None
@@ -28,5 +27,5 @@ def read_serial(filename):
 
         data = com.read(16)
         for msg in reader.next(data):
-          print(msg)
+          print("Longitude: {} {}. Latitude: {} {}".format(msg.lon, msg.lon_dir, msg.lat, msg.lat_dir))
 
